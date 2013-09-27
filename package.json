@@ -1,0 +1,18 @@
+{
+  "name": "multisource-stream",
+  "version": "0.0.1",
+  "author": "Morhaus <a.kirszenberg@gmail.com>",
+  "description": "A readable stream that accepts multiple sources.",
+  "main": "./lib/multisource",
+
+  "dependencies": {
+    "lodash": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-clean": "*",
+    "should": "*"
+  }
+}
