@@ -1,6 +1,6 @@
 # Multisource Stream
 
-A stream that accepts an arbitrary number of sources, which can start from any offset.
+A readable stream that accepts an arbitrary number of sources, which can start from any offset.
 
 ## Examples
 ```
@@ -19,7 +19,7 @@ multi.from(3).write("bar")
 multi.read().toString() // => "foobar"
 ```
 
-# Class: Multisource extends stream.Readable
+# Class: Multisource
 
 ## multisource.from(offset, [options])
 
