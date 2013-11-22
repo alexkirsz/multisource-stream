@@ -80,7 +80,6 @@ module.exports = class Multisource extends Readable
     source =
       stream: new Source options
       offset: offset
-    source.id = (@_sources.push source) - 1
 
     if source.offset > @offset
       # The source is ahead of the main stream.
@@ -96,6 +95,6 @@ module.exports = class Multisource extends Readable
           @_readAheads()
 
     source.stream.on 'end', =>
-      @_sources.splice source.id, 1
+      @_sources.splice (@_sources.indexOf source), 1
 
     return source.stream
