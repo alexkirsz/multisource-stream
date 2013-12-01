@@ -1,6 +1,5 @@
-{ Readable } = require 'stream'
+{ Readable, PassThrough } = require 'stream'
 _ = require 'lodash'
-Source = require './source'
 
 # A multisource stream is a readable stream.
 # It can be piped to from any offset via the method .from() that returns a writable source.
@@ -9,7 +8,6 @@ module.exports = class Multisource extends Readable
     super options
 
     @offset = 0
-    @_sources = []
     @_readables = []
     @_aheads = []
     @_reading = true
@@ -78,7 +76,7 @@ module.exports = class Multisource extends Readable
   # Returns a new source that writes to the main stream from an offset.
   from: (offset, options) =>
     source =
-      stream: new Source options
+      stream: new PassThrough options
       offset: offset
 
     if source.offset > @offset
@@ -93,8 +91,5 @@ module.exports = class Multisource extends Readable
         readable = @_maybeReadSource source
         if readable
           @_readAheads()
-
-    source.stream.on 'end', =>
-      @_sources.splice (@_sources.indexOf source), 1
 
     return source.stream

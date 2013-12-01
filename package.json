@@ -1,18 +1,37 @@
 {
   "name": "multisource-stream",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Morhaus <a.kirszenberg@gmail.com>",
   "description": "A readable stream that accepts multiple sources.",
+  "keywords": [
+    "multisource",
+    "stream"
+  ],
+
   "main": "./lib/multisource",
 
-  "dependencies": {
-    "lodash": "*"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:morhaus/multisource-stream.git"
   },
+
+  "scripts": {
+    "prepublish": "grunt",
+    "test": "mocha --compilers coffee:coffee-script -R spec"
+  },
+
+  "dependencies": {
+    "lodash": "2.x"
+  },
+
   "devDependencies": {
     "grunt": "*",
+    "grunt-cli": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-coffee": "*",
     "grunt-contrib-clean": "*",
-    "should": "*"
+    "coffee-script": "*",
+    "mocha": "*",
+    "expect.js": "*"
   }
 }
