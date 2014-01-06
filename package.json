@@ -1,6 +1,6 @@
 {
   "name": "multisource-stream",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Morhaus <a.kirszenberg@gmail.com>",
   "description": "A readable stream that accepts multiple sources.",
   "keywords": [
