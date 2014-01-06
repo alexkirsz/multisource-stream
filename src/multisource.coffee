@@ -93,3 +93,7 @@ module.exports = class Multisource extends Readable
           @_readAheads()
 
     return source.stream
+
+  # Ends the stream
+  end: ->
+    @push null
